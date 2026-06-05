@@ -1,0 +1,29 @@
+# Project info
+PROJECT_NAME           = "C Agenda"
+PROJECT_NUMBER         = 0.0.1
+PROJECT_BRIEF          = "Trabalho de Fundamentos da Programação"
+
+# Input/Output
+INPUT                  = .
+FILE_PATTERNS          = *.c *.h
+RECURSIVE              = YES
+OUTPUT_DIRECTORY       = docs
+
+# What to extract
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+
+# Diagrams
+HAVE_DOT               = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+
+# HTML output
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+
+# Optional: nicer look
+HTML_COLORSTYLE_HUE    = 220
+GENERATE_TREEVIEW      = YES
