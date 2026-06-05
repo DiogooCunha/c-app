@@ -1,61 +1,53 @@
-/**
- * @file contact.h
- * @brief Contact utility functions
- */
-
 #ifndef CONTACT_H
 #define CONTACT_H
 
-/**
- * @brief type representing a contact.
- */
 typedef struct Contact Contact;
 
 /**
- * @brief Creates a new contact.
+ * @brief Creates a new contact
  *
- * @param name    The contact's name
- * @param number  The contact's phone number
- * @return        Pointer to the new Contact, or NULL if allocation fails
+ * @param name The contact's name
+ * @param number The contact's phone number
+ * @return Pointer to the new contact, or NULL if malloc fails
  */
 Contact* create_contact(char* name, char* number);
 
 /**
- * @brief Frees all memory associated with a contact.
+ * @brief Frees all memory associated with a contact
  *
- * @param self  Pointer to the Contact to destroy
+ * @param self Pointer to the contact to destroy 
  */
 void destroy_contact(Contact* self);
 
 /**
- * @brief Returns the contact's name.
+ * @brief Returns the contact name
  *
- * @param self  Pointer to the Contact
- * @return      The contact's name as a null-terminated string
+ * @param self Pointer to the contact
+ * @return The contact's name
  */
 char* get_contact_name(Contact* self);
 
 /**
- * @brief Sets the contact's name.
+ * @brief Sets the contact name
  *
- * @param self  Pointer to the Contact
- * @param name  New name
+ * @param self Pointer to the contact
+ * @param name New name
  */
 void set_contact_name(Contact* self, char* name);
 
 /**
- * @brief Returns the contact's phone number.
+ * @brief Returns the contact phone number
  *
- * @param self  Pointer to the Contact
- * @return      The contact's number as a null-terminated string
+ * @param self Pointer to the contact
+ * @return The contact's phone number
  */
 char* get_contact_number(Contact* self);
 
 /**
- * @brief Sets the contact's phone number.
+ * @brief Sets the contact name
  *
- * @param self    Pointer to the Contact
- * @param number  New phone number (null-terminated string)
+ * @param self Pointer to the contact
+ * @param number New phone number
  */
 void set_contact_number(Contact* self, char* number);
 
