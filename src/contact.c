@@ -29,3 +29,17 @@ void destroy_contact(Contact* self) {
 char* get_contact_name(Contact* self) {
     return self->name;
 }
+
+void set_contact_name(Contact* self, char* name) {
+    free(self->name);
+    self->name = strdup(name);
+}
+
+char* get_contact_number(Contact* self) {
+    return self->number;
+}
+
+void set_contact_number(Contact* self, char* number) {
+    free(self->number);
+    self->number = strdup(number);
+}

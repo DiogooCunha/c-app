@@ -4,7 +4,8 @@
 
 int main() {
     Contact* contact = create_contact("Diogo", "55");
-    printf("%s", get_contact_name(contact));
+    printf("%s\n", get_contact_name(contact));
+    printf("%s\n", get_contact_number(contact));
 
     destroy_contact(contact);
 
