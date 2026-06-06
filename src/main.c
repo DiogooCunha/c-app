@@ -1,13 +1,17 @@
 #include<stdio.h>
 
 #include "contact.h"
+#include "agenda.h"
 
 int main() {
-    Contact* contact = create_contact("Diogo", "55");
-    printf("%s\n", get_contact_name(contact));
-    printf("%s\n", get_contact_number(contact));
+    Agenda* agenda = create_agenda();
+    Contact* contact1 = create_contact("Diogo", "55");
+    add_contact(agenda, contact1);
 
-    destroy_contact(contact);
+    Contact *contact2 = create_contact("Arthur", "47");
+    add_contact(agenda, contact2);
+
+    list_contacts(agenda);
 
     return 0;
 }
