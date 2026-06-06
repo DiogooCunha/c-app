@@ -14,6 +14,13 @@ typedef struct Agenda Agenda;
 Agenda* create_agenda(void);
 
 /**
+ * @brief Frees all memory associated with the agenda
+ *
+ * @param self Pointer to the agenda to destroy
+ */
+void destroy_agenda(Agenda* self);
+
+/**
  * @brief Add a contact to the agenda
  *
  * @param self The agenda create in the start

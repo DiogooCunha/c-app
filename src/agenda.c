@@ -23,6 +23,15 @@ Agenda* create_agenda(void) {
     return self;
 }
 
+void destroy_agenda(Agenda* self) {
+    for(int i = 0; i < self->quantContacts; i++) {
+        destroy_contact(self->contacts[i]);
+    }
+
+    free(self->contacts);
+    free(self);
+}
+
 void add_contact(Agenda* self, Contact* contact) {
     self->contacts[self->quantContacts] = contact;
     self->quantContacts++;
