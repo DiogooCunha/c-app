@@ -36,4 +36,13 @@ void add_contact(Agenda* self, Contact* contact);
  */
 void list_contacts(Agenda* self);
 
+/**
+ * @brief Filter contact by name
+ * 
+ * @param self The agenda containing all contacts
+ * @param name The name that will be filtered
+ * @note Print of the contact containing the exact name entered
+ */
+void list_contact_by_name(Agenda* self, char* name);
+
 #endif
