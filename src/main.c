@@ -13,5 +13,7 @@ int main() {
 
     list_contacts(agenda);
 
+    export_to_csv(agenda);
+
     return 0;
 }

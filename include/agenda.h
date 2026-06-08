@@ -36,4 +36,11 @@ void add_contact(Agenda* self, Contact* contact);
  */
 void list_contacts(Agenda* self);
 
+/**
+ * @brief Exports all contacts to a csv file
+ *
+ * @param self Pointer to the agenda
+ */
+void export_to_csv(Agenda* self);
+
 #endif
