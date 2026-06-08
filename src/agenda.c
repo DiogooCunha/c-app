@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "agenda.h"
 #include "contact.h"
@@ -39,7 +40,7 @@ void add_contact(Agenda* self, Contact* contact) {
 
 void list_contacts(Agenda* self) {
     for(int i = 0; i < self->quantContacts; i++) {
-        printf("Contato: %s\n", get_contact_name(self->contacts[i]));
+        printf("\nContato: %s\n", get_contact_name(self->contacts[i]));
         printf("Telefone: %s\n", get_contact_number(self->contacts[i]));
     }
 }
@@ -62,4 +63,14 @@ void export_to_csv(Agenda* self) {
     }
 
     fclose(file);
+
+void list_contact_by_name(Agenda* self, char* name) {
+    for(int i = 0; i < self->quantContacts; i++) {
+        if(strcmp(get_contact_name(self->contacts[i]), name) == 0) {
+            printf("Contato: %s\n", get_contact_name(self->contacts[i]));
+            printf("Telefone: %s\n", get_contact_number(self->contacts[i]));
+            return;
+        }
+    }
+    printf("Nenhum contato encontrado\n");
 }
