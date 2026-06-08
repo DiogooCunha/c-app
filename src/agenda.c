@@ -45,6 +45,25 @@ void list_contacts(Agenda* self) {
     }
 }
 
+void export_to_csv(Agenda* self) {
+    FILE *file = fopen("agenda.csv", "w");
+    if (file == NULL) {
+        perror("Error opening the file");
+        return;
+    }
+
+    fprintf(file, "ID,Name,Number\n");
+
+    for (int i = 0; i < self->quantContacts; i++) {
+        fprintf(file, "%d,%s,%s\n", 
+            i, 
+            get_contact_name(self->contacts[i]), 
+            get_contact_number(self->contacts[i])
+        );
+    }
+
+    fclose(file);
+
 void list_contact_by_name(Agenda* self, char* name) {
     for(int i = 0; i < self->quantContacts; i++) {
         if(strcmp(get_contact_name(self->contacts[i]), name) == 0) {

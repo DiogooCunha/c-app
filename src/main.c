@@ -59,5 +59,7 @@ int main() {
     
     destroy_agenda(agenda);
 
+    export_to_csv(agenda);
+
     return 0;
 }

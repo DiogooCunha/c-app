@@ -37,6 +37,13 @@ void add_contact(Agenda* self, Contact* contact);
 void list_contacts(Agenda* self);
 
 /**
+ * @brief Exports all contacts to a csv file
+ *
+ * @param self Pointer to the agenda
+ */
+void export_to_csv(Agenda* self);
+
+/**
  * @brief Filter contact by name
  * 
  * @param self The agenda containing all contacts
