@@ -57,6 +57,7 @@ int main() {
         }
     }
     
+    destroy_agenda(agenda);
 
     return 0;
 }
