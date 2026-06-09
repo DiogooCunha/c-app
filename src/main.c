@@ -11,13 +11,14 @@ int main() {
     char nome[100];
     char numero[20];
 
-    while (option != 5) {
+    while (option != 6) {
         printf("----------------------------------\n");
         printf("[1] Incluir contato\n");
         printf("[2] Listar contatos\n");
         printf("[3] Consultar contato pelo nome\n");
-        printf("[4] Excluir contato\n");
-        printf("[5] Sair\n");
+        printf("[4] Exportar CSV\n");
+        printf("[5] Excluir contato\n");
+        printf("[6] Sair\n");
         printf("Escolha uma opção: ");
         scanf("%i", &option);
         printf("----------------------------------\n");
@@ -48,8 +49,13 @@ int main() {
             sleep(1);
             break;
         case 4:
+            export_to_csv(agenda);
+            printf("Conteúdo exportado com sucesso!\n");
+            sleep(1);
             break;
         case 5:
+            break;
+        case 6:
             break;
         default:
             printf("Opção inválida\n");
@@ -58,8 +64,6 @@ int main() {
     }
     
     destroy_agenda(agenda);
-
-    export_to_csv(agenda);
 
     return 0;
 }

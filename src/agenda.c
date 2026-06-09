@@ -63,6 +63,7 @@ void export_to_csv(Agenda* self) {
     }
 
     fclose(file);
+}
 
 void list_contact_by_name(Agenda* self, char* name) {
     for(int i = 0; i < self->quantContacts; i++) {
