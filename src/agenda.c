@@ -40,7 +40,7 @@ void add_contact(Agenda* self, Contact* contact) {
 
 void list_contacts(Agenda* self) {
     for(int i = 0; i < self->quantContacts; i++) {
-        printf("\nContato: %s\n", get_contact_name(self->contacts[i]));
+        printf("\n[%i] Contato: %s\n", i+1, get_contact_name(self->contacts[i]));
         printf("Telefone: %s\n", get_contact_number(self->contacts[i]));
     }
 }
@@ -74,4 +74,20 @@ void list_contact_by_name(Agenda* self, char* name) {
         }
     }
     printf("Nenhum contato encontrado\n");
+}
+
+void drop_contact(Agenda* self, int index) {
+    int indexReal = index - 1;
+    if(indexReal < 0 || indexReal >= self->quantContacts) {
+        printf("Indice invalido.");
+        return;
+    }
+
+    destroy_contact(self->contacts[indexReal]);
+
+    for(int i = indexReal; i <= self->quantContacts; i++) {
+        self->contacts[i] = self->contacts[i+1];
+    }
+
+    self->quantContacts--;
 }

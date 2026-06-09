@@ -52,4 +52,12 @@ void export_to_csv(Agenda* self);
  */
 void list_contact_by_name(Agenda* self, char* name);
 
+/**
+ * @brief Drop contact from agenda
+ * 
+ * @param self The agenda containing all contacts
+ * @param index The index of contact 
+ */
+void drop_contact(Agenda* self, int indice);
+
 #endif

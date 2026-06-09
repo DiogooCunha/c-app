@@ -10,6 +10,7 @@ int main() {
     int option = 0;
     char nome[100];
     char numero[20];
+    int index;
 
     while (option != 6) {
         printf("----------------------------------\n");
@@ -54,6 +55,11 @@ int main() {
             sleep(1);
             break;
         case 5:
+            printf("Digite o índice do contato que deseja excluir:\n");
+            scanf("%i", &index);
+            drop_contact(agenda, index);
+            printf("Usuário excluido com sucesso\n");
+            sleep(1);
             break;
         case 6:
             break;
