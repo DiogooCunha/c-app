@@ -36,7 +36,7 @@ int main() {
         case 1:
             setColor(10);
             printf("Nome do novo contato:\n");
-            scanf("%100s", nome);
+            scanf(" %[^\n]", nome);
             printf("Número do novo contato:\n");
             scanf("%20s", numero);
             
@@ -49,7 +49,7 @@ int main() {
         case 2:
             setColor(14);
             list_contacts(agenda);
-            Sleep(1000);
+            Sleep(2000);
             break;
         case 3:
             setColor(14);
