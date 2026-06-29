@@ -1,5 +1,10 @@
 # c-app 
 
+## Get Started
+```text
+gcc -Iinclude -Wall -Wextra src/main.c src/contact.c src/agenda.c -o app
+```
+
 ## Documentation
 
 * The documentation must be in the *.h file and follow this structure:
