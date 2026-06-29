@@ -34,6 +34,17 @@ void destroy_agenda(Agenda* self) {
 }
 
 void add_contact(Agenda* self, Contact* contact) {
+    if (self->quantContacts == self->max_contacts) {
+        int new_max = self->max_contacts * 2;
+        Contact** tmp = realloc(self->contacts, new_max * sizeof(Contact*));
+        if (!tmp) {
+            printf("Error: failed to expand agenda\n");
+            return;
+        }
+        self->contacts = tmp;
+        self->max_contacts = new_max;
+    }
+
     self->contacts[self->quantContacts] = contact;
     self->quantContacts++;
 }
