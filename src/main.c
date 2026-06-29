@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <ctype.h>
-#include <unistd.h>
+#include <windows.h>
+#include <string.h>
 
 #include "contact.h"
 #include "agenda.h"
+
+void setColor(int cor) {
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), cor);
+}
 
 int main() {
     Agenda* agenda = create_agenda();
@@ -13,6 +18,8 @@ int main() {
     int index;
 
     while (option != 6) {
+        system("cls");
+        setColor(11);
         printf("----------------------------------\n");
         printf("[1] Incluir contato\n");
         printf("[2] Listar contatos\n");
@@ -27,6 +34,7 @@ int main() {
         switch (option)
         {
         case 1:
+            setColor(10);
             printf("Nome do novo contato:\n");
             scanf("%100s", nome);
             printf("Número do novo contato:\n");
@@ -36,30 +44,34 @@ int main() {
             add_contact(agenda, contato);
 
             printf("Usuário criado com sucesso.\n");
-            sleep(1);
+            Sleep(1000);
             break;
         case 2:
+            setColor(14);
             list_contacts(agenda);
-            sleep(1);
+            Sleep(1000);
             break;
         case 3:
+            setColor(14);
             printf("Nome do contato:\n");
             scanf("%100s", nome);
 
             list_contact_by_name(agenda, nome);
-            sleep(1);
+            Sleep(1000);
             break;
         case 4:
+            setColor(10);
             export_to_csv(agenda);
             printf("Conteúdo exportado com sucesso!\n");
-            sleep(1);
+            Sleep(1000);
             break;
         case 5:
+            setColor(12);
             printf("Digite o índice do contato que deseja excluir:\n");
             scanf("%i", &index);
             drop_contact(agenda, index);
             printf("Usuário excluido com sucesso\n");
-            sleep(1);
+            Sleep(1000);
             break;
         case 6:
             break;
@@ -70,6 +82,7 @@ int main() {
     }
     
     destroy_agenda(agenda);
+    setColor(7);
 
     return 0;
 }
